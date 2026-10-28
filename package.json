@@ -1,0 +1,32 @@
+{
+  "name": "mijovia",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "npm run build -w @mijovia/shared && npm run build -w @mijovia/api && npm run build -w @mijovia/web",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "dev": "npm run dev -w apps/api",
+    "db:migrate": "node --import tsx --env-file=.env scripts/migrate.ts",
+    "db:seed": "node --import tsx --env-file=.env scripts/seed.ts",
+    "test:integration": "node --import tsx --test tests/integration.test.ts",
+    "format": "prettier --write apps packages scripts tests",
+    "account:admin": "node --import tsx --env-file=.env scripts/admin.ts",
+    "db:cleanup": "node --import tsx --env-file=.env scripts/cleanup.ts",
+    "db:test-profile": "node --import tsx --env-file=.env scripts/test-profile.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/supertest": "^7.2.1",
+    "prettier": "^3.9.10",
+    "supertest": "^7.3.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

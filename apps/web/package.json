@@ -1,0 +1,26 @@
+{
+  "name": "@mijovia/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^13.2.0",
+    "@tanstack/react-query": "^5.105.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.91.0",
+    "react-router-dom": "^7.18.5",
+    "recharts": "^3.10.1",
+    "zod": "^4.6.7",
+    "@mijovia/shared": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "vite": "^6.3.0",
+    "vite-plugin-pwa": "^2.0.0"
+  }
+}
